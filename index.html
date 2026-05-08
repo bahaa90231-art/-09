@@ -548,11 +548,11 @@
                 </div>
                 <div class="insight-stats">
                     <div class="stat">
-                        <div class="number">+7</div>
+                        <div class="number">+3</div>
                         <div>سنوات خبرة</div>
                     </div>
                     <div class="stat">
-                        <div class="number">+60</div>
+                        <div class="number">+10</div>
                         <div>مشروع ناجح</div>
                     </div>
                     <div class="stat">
@@ -812,47 +812,6 @@
     });
 </script>
 
-<!-- تعليمات إعداد Google Sheets -->
-<div style="display:none;">
-    <!-- 
-    ═══════════════════════════════════════════════════════════════
-    📌 خطوات ربط الموقع مع Google Sheets (نظام تسجيل الدخول)
-    ═══════════════════════════════════════════════════════════════
-    
-    1️⃣ افتح Google Drive → جديد → جداول بيانات Google → سمِّه "UsersData"
-    
-    2️⃣ في الصف الأول (A1 إلى E1) اكتب:
-       A1: الاسم الكامل
-       B1: البريد الإلكتروني  
-       C1: كلمة المرور
-       D1: تاريخ التسجيل
-       E1: معرف فريد
-    
-    3️⃣ اذهب إلى الامتدادات → Apps Script
-    
-    4️⃣ احذف الكود الموجود والصق هذا الكود:
-    
-    function doPost(e) {
-      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-      var params = e.parameter;
-      sheet.appendRow([params.name, params.email, params.password, params.timestamp || new Date().toISOString(), Utilities.getUuid()]);
-      return ContentService.createTextOutput(JSON.stringify({success: true})).setMimeType(ContentService.MimeType.JSON);
-    }
-    
-    function doGet(e) {
-      return ContentService.createTextOutput(JSON.stringify({status: "active"})).setMimeType(ContentService.MimeType.JSON);
-    }
-    
-    5️⃣ اضغط نشر → نشر كتطبيق ويب
-       - تنفيذ باسم: "أنا"
-       - من لديه حق الوصول: "أي شخص"
-       - اضغط "نشر" وانسخ الرابط
-    
-    6️⃣ في ملف HTML هذا، ابحث عن const GOOGLE_SCRIPT_URL واستبدل الرابط
-    
-    7️⃣ احفظ الموقع واختبره! ✅
-    ═══════════════════════════════════════════════════════════════
-    -->
 </div>
 </body>
 </html>
